@@ -12,5 +12,7 @@ namespace JapanesePractise.Core.DomainModels
         public DateTime LastPractised { get; set; }
         public PractiseDifficulty Difficulty { get; set; }
 
+        public string GitTest { get; set; }
+
     }
 }
