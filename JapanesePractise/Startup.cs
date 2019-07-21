@@ -35,6 +35,8 @@ namespace JapanesePractise
             services.ConfigureEFCore(Configuration.GetConnectionString("JapanesePractiseConnection"));
             services.ConfigureCookiePolicy();
             services.ConfigureDotNetFrameworkCompatibility();
+
+            services.ConfigureDomainManagers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,13 +49,8 @@ namespace JapanesePractise
 
             app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
-
-
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
+            app.UseMvc();
         }
     }
 }

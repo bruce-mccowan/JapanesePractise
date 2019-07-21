@@ -1,4 +1,6 @@
-﻿using JapanesePractise.Repositories;
+﻿using JapanesePractise.Core.DomainManagers.Implementation;
+using JapanesePractise.Core.DomainManagers.Interfaces;
+using JapanesePractise.Repositories;
 using JapanesePractise.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -58,5 +60,10 @@ namespace JapanesePractise.Extensions
             services.Configure<AppSettings>(config.GetSection("ApplciationSettings"));
         }
 
+
+        public static void ConfigureDomainManagers(this IServiceCollection services)
+        {
+            services.AddScoped<IWordManager, WordManager>();
+        }
     }
 }

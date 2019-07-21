@@ -16,7 +16,6 @@ namespace JapanesePractise.Core.DomainModels
         public string Romanji { get; set; }
         public string HiraganaKatakana { get; set; }
         public string Kanji { get; set; }
-
     }
 
     public class Noun : Word
